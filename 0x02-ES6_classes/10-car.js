@@ -6,6 +6,8 @@ export default class Car {
   }
 
   cloneCar() {
-    return new Car();
+    const newCar = new Car();
+    Object.assign(newCar, this);
+    return newCar;
   }
 }
