@@ -13,6 +13,6 @@ export default class Airport {
   set code(value) { this._code = value; }
 
   toString() {
-    return `[Object ${this._code}]`;
+    return `[object ${this._code}]`;
   }
 }
