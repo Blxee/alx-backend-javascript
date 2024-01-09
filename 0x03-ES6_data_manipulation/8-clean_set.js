@@ -1,7 +1,7 @@
-export default function cleanSet(set, prefix) {
-  if (!prefix) return '';
-  const arr = new Array(...set)
-    .filter((str) => str.startsWith(prefix))
-    .map((str) => str.replace(prefix, ''));
+export default function cleanSet(inputSet, startString) {
+  if (!startString) return '';
+  const arr = new Array(...inputSet)
+    .filter((str) => str.startsWith(startString))
+    .map((str) => str.substring(startString.length));
   return arr.join('-');
 }
