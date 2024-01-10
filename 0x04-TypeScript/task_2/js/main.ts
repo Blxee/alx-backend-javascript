@@ -45,3 +45,15 @@ export function createEmployee(salary: number | string): Director | Teacher {
     return new Director();
   }
 }
+
+export function isDirector(employee: Director | Teacher): boolean {
+  return employee instanceof Director;
+}
+
+export function executeWork(employee: Director | Teacher): void {
+  if (isDirector(employee)) {
+    (employee as Director).workDirectorTasks();
+  } else {
+    (employee as Teacher).workTeacherTasks();
+  }
+}
