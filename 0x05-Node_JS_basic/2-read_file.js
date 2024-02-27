@@ -6,7 +6,7 @@ module.exports = function countStudents(path) {
   }
 
   let data = fs.readFileSync(path).toString();
-  data = data.replace(/.+\n/, '');
+  data = data.replace(/.+\n/, '').trim().concat('\n');
 
   const studentsLen = data.match(/\n/g).length;
   console.log(`Number of students: ${studentsLen}`);
