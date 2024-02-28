@@ -9,19 +9,20 @@ module.exports = function countStudents(path) {
   data = data.replace(/.+\n/, '').trim().concat('\n');
 
   const studentsLen = data.match(/\n/g).length;
-  console.log(`Number of students: ${studentsLen}`);
+  let result = `Number of students: ${studentsLen}\n`;
 
   const fields = new Set(data.match(/[^,]+(?=\n)/g));
 
   for (const field of fields) {
-    process.stdout.write(`Number of students in ${field}:`);
+    result += `Number of students in ${field}:`;
     let lines = data.split('\n').slice(0, -1);
 
     lines = lines
       .filter((line) => line.match(field))
       .map((line) => line.match(/[^,]+/).toString());
 
-    process.stdout.write(` ${lines.length}.`);
-    console.log(` List: ${lines.join(', ')}`);
+    result += ` ${lines.length}. List: ${lines.join(', ')}\n`;
   }
+
+  process.stdout.write(result);
 };
