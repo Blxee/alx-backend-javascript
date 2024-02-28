@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function countStudents(path) {
+module.exports = function countStudents(path, stream = process.stdout) {
   if (!fs.existsSync(path)) {
     throw new Error('Cannot load the database');
   }
@@ -24,5 +24,5 @@ module.exports = function countStudents(path) {
     result += ` ${lines.length}. List: ${lines.join(', ')}\n`;
   }
 
-  process.stdout.write(result);
+  stream.write(result);
 };
