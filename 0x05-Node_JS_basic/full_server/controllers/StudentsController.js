@@ -14,6 +14,7 @@ class StudentsController {
           const names = val[field].join(', ');
           result += `Number of students in ${field}: ${namesCount}. List: ${names}\n`;
         }
+        result = result.trim();
 
         response.status(200).send(result);
       })
