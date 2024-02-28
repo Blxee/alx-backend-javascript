@@ -18,7 +18,7 @@ class StudentsController {
         response.status(200).send(result);
       })
       .catch((err) => {
-        response.status(200).send(err);
+        response.status(500).send(err);
       });
   }
 
