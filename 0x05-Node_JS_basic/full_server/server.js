@@ -4,3 +4,5 @@ const mapRoutes = require('./routes/index');
 const app = express();
 mapRoutes(app);
 app.listen(1245);
+
+module.exports = app;
