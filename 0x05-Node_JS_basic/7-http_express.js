@@ -8,10 +8,14 @@ app.get('/', (_req, res) => {
 });
 
 app.get('/students', (_req, res) => {
-  const path = process.argv[2];
+  const path = process.argv[2] || '';
   res.status(200);
   res.write('This is the list of our students\n');
-  countStudents(path, res);
+  try {
+    countStudents(path, res);
+  } catch ({ name, message }) {
+    res.write(message);
+  }
   res.end();
 });
 
