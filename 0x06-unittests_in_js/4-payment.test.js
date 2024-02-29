@@ -1,6 +1,6 @@
 const sinon = require('sinon');
 const Utils = require('./utils');
-const sendPaymentRequestToApi = require('./3-payment')
+const sendPaymentRequestToApi = require('./4-payment')
 
 describe('Test suit for sendPaymentRequestToApi function', function() {
   it('Test that calculateNumber is called', function() {
