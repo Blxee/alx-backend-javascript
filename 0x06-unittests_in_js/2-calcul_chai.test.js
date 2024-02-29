@@ -1,8 +1,5 @@
 const calculateNumber = require('./2-calcul_chai.js');
-let expect;
-import('chai').then((res) => {
-  expect = res.expect;
-});
+const { expect } = require('chai');
 
 describe('Test suit for calculateNumber', function() {
   it('Test round sum for calculateNumber', function() {
