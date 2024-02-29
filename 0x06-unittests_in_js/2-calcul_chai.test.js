@@ -1,5 +1,5 @@
-const calculateNumber = require('./2-calcul_chai.js');
-const { expect } = require('chai');
+import calculateNumber from './2-calcul_chai.js';
+import { expect } from 'chai';
 
 describe('Test suit for calculateNumber', function() {
   it('Test round sum for calculateNumber', function() {
@@ -12,7 +12,7 @@ describe('Test suit for calculateNumber', function() {
   });
   it('Test round divide for calculateNumber', function() {
     expect(calculateNumber('DIVIDE', 5.1, 4.8)).to.equal(1);
-    expect(calculateNumber('DIVIDE', 5, 2)).to.equal(2);
+    expect(calculateNumber('DIVIDE', 5, 2)).to.equal(2.5);
     expect(calculateNumber('DIVIDE', 3, 0)).to.equal('Error');
   });
 });
