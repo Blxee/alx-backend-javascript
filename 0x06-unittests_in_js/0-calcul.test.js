@@ -1,5 +1,5 @@
 import calculateNumber from './0-calcul.js';
-import { assert } from 'chai';
+import assert from 'assert';
 
 describe('Test suit for calculateNumber', function() {
   it('Test round sum for calculateNumber', function() {
