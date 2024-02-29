@@ -2,7 +2,6 @@
   "name": "0x06-unittests_in_js",
   "version": "1.0.0",
   "description": "0x06 Unittests in js",
-  "type": "module",
   "scripts": {
     "test": "mocha"
   },
