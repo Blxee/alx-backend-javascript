@@ -33,4 +33,31 @@ describe('Test api', function() {
       done();
     });
   });
+
+  it('Test /available_payments route', function(done) {
+    request('http://localhost:7865/available_payments', (error, response, body) => {
+      if (error || !response)
+        done();
+
+      assert(response.statusCode === 200);
+      assert.deepEqual(JSON.parse(body), {
+        payment_methods: {
+          credit_cards: true,
+          paypal: false
+        }
+      });
+      done();
+    });
+  });
+
+  it('Test /login route', function(done) {
+    request({ uri: 'http://localhost:7865/login', body: { userName: "Betty" }, headers: {'Content-Type': 'application/json'} }, (error, response, body) => {
+      if (error || !response)
+        done();
+
+      assert(response.statusCode === 200);
+      assert(body === 'Welcome Betty');
+      done();
+    });
+  });
 })
