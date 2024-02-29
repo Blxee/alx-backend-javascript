@@ -1,4 +1,4 @@
-export default function calculateNumber(type, a, b) {
+module.exports = function calculateNumber(type, a, b) {
   a = Math.round(a);
   b = Math.round(b);
 
